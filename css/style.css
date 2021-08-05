@@ -1,0 +1,161 @@
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 50px;
+}
+.game-box {
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    background: url(../img/bg.png) 0 0 / cover no-repeat;
+}
+
+.header {
+    background: #fff;
+    opacity: 0.4;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    width: 500px;
+    margin-left: auto;
+}
+.header-title{
+    text-align: center;
+}
+.timer, .level, .count, .bobus-count, .bonus-box {
+    font-weight: bold;
+    font-size: 20px;
+}
+.time, .lvl, .points{
+    margin: 5px 0;
+    text-align: center;
+}
+
+.bonus-box{
+    
+}
+.bonus {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+.bonus-level {
+    width: 7px;
+    height: 7px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin: 0 2px;
+}
+.bonus-level-active{
+    background: #000;
+}
+.bonus-count {
+}
+.game-condition {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 80px;
+    color: #fff;
+}
+.cards-boxs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 60px;
+}
+.icons {
+    position: relative;
+}
+.check {
+    position: absolute;
+    top: 100px;
+    left: -30px;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+.cross {
+    position: absolute;
+    top: 100px;
+    left: -30px;
+    visibility: hidden;
+    transition: 0.3s linear;
+}
+.icon-active{
+    visibility: visible;
+    transform: scale(2) rotate(360deg);
+}
+
+.box-title {
+    text-align: center;
+    color: #fff;
+}
+.box-card {
+    width: 270px;
+    height: 160px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+.switch-card{
+    transform: rotateX(180deg)
+}
+.word {
+   font-size: 30px;
+}
+
+.box-buttons {
+    display: flex;
+    justify-content: center;
+}
+.no, .yes {
+    width: 90px;
+    height: 55px;
+    outline: none;
+    background: #fff;
+    opacity: 0.4;
+    font-size: 20px;
+    user-select: none;
+    border: none;
+    text-transform: uppercase;
+    margin: 3px;
+}
+.yes:hover{
+    opacity: 1;
+}
+.no:hover{
+    opacity: 1;
+}
+.no {
+    border-radius: 4px 0 0 4px;
+    position: relative;
+}
+.no::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent #575757 transparent transparent;
+    left: 10px;
+    top: 20px;
+}
+.yes {
+    border-radius: 0px 4px 4px 0px;
+    position: relative;
+}
+.yes::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #575757;
+    right: 10px;
+    top: 20px;
+}

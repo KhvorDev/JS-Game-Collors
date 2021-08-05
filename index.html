@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="game-box">
+            <div class="header">
+                <div class="timer">
+                    <div class="header-title">Время</div>
+                    <p class="time">00:00</p>
+                </div>
+                <div class="level">
+                    <div class="header-title">Уровень</div>
+                    <p class="lvl">1-2</p>
+                </div>
+                <div class="count">
+                    <div class="header-title">Очки</div>
+                    <p class="points">0</p>
+                </div>
+                <div class="bonus-box">
+                    <div class="header-title">Бонус</div>
+                    <div class="bonus">
+                        <span class="bonus-level"></span>
+                        <span class="bonus-level"></span>
+                        <span class="bonus-level"></span>
+                        <span class="bonus-level"></span>
+                        <span class="bonus-level"></span>
+                        <span class="bonus-count">x1</span>
+                    </div>
+                </div>
+            </div>
+            <p class="game-condition">Совпадает ли название цвета в левой карточке с цветом текста в правой карточке?
+            </p>
+            <div class="cards-boxs">
+                <div class="left-box">
+                    <h3 class="box-title">Значение</h3>
+                    <div class="box-card left">
+                        <p class="word left-word">Красный</p>
+                    </div>
+                </div>
+                <div class="icons">
+                    <img src="img/check.png" alt="" class="check">
+                    <img src="img/cross.png" alt="" class="cross">
+                </div>
+                <div class="right-box">
+                    <h3 class="box-title">Цвет</h3>
+                    <div class="box-card right">
+                        <p class="word right-word">Красный</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-buttons">
+                <button value="false" class="no button">нет</button>
+                <button value="true" class="yes button">да</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
