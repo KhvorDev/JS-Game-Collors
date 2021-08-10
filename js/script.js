@@ -81,7 +81,7 @@ function checkTheAnswear(event) {
     }
     setTimeout(removeActiveClass, 500)
     // проверяем совпадает ли правильный ответ с нажатой кнопкой
-    if (event.target.textContent == 'да' && answear == true || event.target.textContent == 'нет' && answear == false) {
+    if (event.target.textContent === 'да' && answear === true || event.target.textContent === 'нет' && answear === false) {
         iconCheck.classList.add('icon-active');
         point++
         bonusPoint++
@@ -97,8 +97,8 @@ function checkTheAnswear(event) {
     // бонусная система
     bonusLvl(bonusPoint, point)
 
-    changeLeftCard()
-    changeRightCard()
+    changeLeftCard();
+    changeRightCard();
 }
 
 
@@ -118,7 +118,7 @@ function timeCount() {
         second++
     }, 1000)
 }
-timeCount()
+timeCount();
 
 // Общее число очков игрока
 let setPoint = 0;
@@ -130,57 +130,40 @@ function bonusLvl(bonusPoint, point) {
             item.classList.remove('bonus-level-active');
         }
         bonusIndex = 1;
+        bonusCount.textContent = 'x' + bonusIndex;
     }
     else if (bonusPoint = 4 && bonusPoint < 8) {
         bonusIndex = 2;
+        bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
+        point *= bonusIndex;
+        bonusCount.textContent = 'x' + bonusIndex;
     }
     else if (bonusPoint = 8 && bonusPoint < 12) {
         bonusIndex = 3;
+        bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
+        point *= bonusIndex;
+        bonusCount.textContent = 'x' + bonusIndex;
     }
     else if (bonusPoint = 12 && bonusPoint < 16) {
         bonusIndex = 4;
+        bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
+        point *= bonusIndex;
+        bonusCount.textContent = 'x' + bonusIndex;
     }
     else if (bonusPoint = 16 && bonusPoint < 20) {
         bonusIndex = 5;
+        bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
+        point *= bonusIndex;
+        bonusCount.textContent = 'x' + bonusIndex;
     }
     else if (bonusPoint > 20) {
         bonusIndex = 6;
-    }
-    console.log(bonusIndex);
-
-    switch (bonusIndex) {
-        case 1:
-            bonusCount.textContent = 'x1'
-            point = point;
-            break;
-        case 2:
-            bonusBoxs[0].classList.add('bonus-level-active');
-            bonusCount.textContent = 'x2'
-            point = point * 2;
-            break;
-        case 3:
-            bonusBoxs[1].classList.add('bonus-level-active');
-            bonusCount.textContent = 'x3'
-            point = point * 3;
-            break;
-        case 4:
-            bonusBoxs[2].classList.add('bonus-level-active');
-            bonusCount.textContent = 'x4'
-            point = point * 4;
-            break;
-        case 5:
-            bonusBoxs[3].classList.add('bonus-level-active');
-            bonusCount.textContent = 'x5'
-            point = point * 5;
-            break;
-        case 6:
-            bonusBoxs[4].classList.add('bonus-level-active');
-            bonusCount.textContent = 'x6'
-            point = point * 6;
-            break;
+        bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
+        point *= bonusIndex;
+        bonusCount.textContent = 'x' + bonusIndex;
     }
 
-    setPoint = setPoint + point
+    setPoint += point
     gamePoint.textContent = setPoint;
 }
 
