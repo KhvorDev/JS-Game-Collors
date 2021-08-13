@@ -119,7 +119,7 @@ function timeCount() {
         second++
     }, 1000)
 }
-// timeCount();
+timeCount();
 
 // Общее число очков игрока
 let setPoint = 0;
