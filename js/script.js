@@ -63,7 +63,7 @@ function changeRightCard() {
 function checkTheAnswear(event) {
     let answear = '';
     let point = 0;
-    console.log(point);
+
 
     if (rightWord.style.color == words[leftWord.textContent]) {
         answear = true;
@@ -92,7 +92,8 @@ function checkTheAnswear(event) {
         bonusPoint = 0;
         lvlNumber++
     }
-    console.log(point);
+    console.log('bonusPoint - ' + bonusPoint);
+
     lvlCount.textContent = `${lvlNumber}-${lvlNumber + 1}`
     // бонусная система
     bonusLvl(bonusPoint, point)
@@ -118,7 +119,7 @@ function timeCount() {
         second++
     }, 1000)
 }
-timeCount();
+// timeCount();
 
 // Общее число очков игрока
 let setPoint = 0;
@@ -132,25 +133,25 @@ function bonusLvl(bonusPoint, point) {
         bonusIndex = 1;
         bonusCount.textContent = 'x' + bonusIndex;
     }
-    else if (bonusPoint = 4 && bonusPoint < 8) {
+    else if (bonusPoint >= 4 && bonusPoint < 8) {
         bonusIndex = 2;
         bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
         point *= bonusIndex;
         bonusCount.textContent = 'x' + bonusIndex;
     }
-    else if (bonusPoint = 8 && bonusPoint < 12) {
+    else if (bonusPoint >= 8 && bonusPoint < 12) {
         bonusIndex = 3;
         bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
         point *= bonusIndex;
         bonusCount.textContent = 'x' + bonusIndex;
     }
-    else if (bonusPoint = 12 && bonusPoint < 16) {
+    else if (bonusPoint >= 12 && bonusPoint < 16) {
         bonusIndex = 4;
         bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
         point *= bonusIndex;
         bonusCount.textContent = 'x' + bonusIndex;
     }
-    else if (bonusPoint = 16 && bonusPoint < 20) {
+    else if (bonusPoint >= 16 && bonusPoint < 20) {
         bonusIndex = 5;
         bonusBoxs[bonusIndex - 2].classList.add('bonus-level-active');
         point *= bonusIndex;
@@ -162,6 +163,7 @@ function bonusLvl(bonusPoint, point) {
         point *= bonusIndex;
         bonusCount.textContent = 'x' + bonusIndex;
     }
+    console.log('bonusIndex - ' + bonusIndex);
 
     setPoint += point
     gamePoint.textContent = setPoint;
